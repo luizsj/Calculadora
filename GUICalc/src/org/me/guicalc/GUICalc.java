@@ -318,25 +318,21 @@ public void ExibaVisor(JButton botao)
     
 }        
 public void CapturaOperador(JButton botao)
-{   if (objeto1.getOperador()==null )
-        {   objeto1.setOperador(botao.getText()); }
-    CalcularOp(botao);
-    objeto1.setOperador(botao.getText());
-    
+{   
+    objeto1.setOperador(botao.getText(), jTextField1);
+    if (! (objeto1.getResultado().equals("")))
+        {
+              jTextField1.setText(objeto1.getResultado());
+        }
     objeto1.setValor1(jTextField1.getText());    
     jTextField2.setText(jTextField2.getText()+ botao.getText());
     objeto1.setValor2("");
 }    
 
 public void CalcularOp(JButton botao){
-    double resultado;
-    objeto1.setValor2(jTextField1.getText());
-    //jTextField2.setText(objeto1.getValor1()+" "+objeto1.getOperador()+" "+objeto1.getValor2());
-    resultado=objeto1.Calcula();
-    String Texto;
-    Texto = String.valueOf(resultado);
-    jTextField1.setText(Texto);
-    
+    String resultado;
+    resultado = objeto1.Calcula(jTextField1);
+    jTextField1.setText(resultado);
 }
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -372,6 +368,8 @@ private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 // TODO add your handling code here:
     CalcularOp(jButton12);
     jTextField2.setText("");
+    objeto1.setValor2("");
+    objeto1.setOperador("");
 }//GEN-LAST:event_jButton12ActionPerformed
 
 private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
