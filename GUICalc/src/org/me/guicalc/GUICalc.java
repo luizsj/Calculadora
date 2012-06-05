@@ -369,7 +369,7 @@ private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     CalcularOp(jButton12);
     jTextField2.setText("");
     objeto1.setValor2("");
-    objeto1.setOperador("");
+    objeto1.setOperador("", jTextField1);
 }//GEN-LAST:event_jButton12ActionPerformed
 
 private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
